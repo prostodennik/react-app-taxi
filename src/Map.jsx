@@ -2,6 +2,6 @@ import React from "react";
 
 export const Map = () => {
     return (
-        <>Карта</>
+        <div>Карта</div>
     )
 }

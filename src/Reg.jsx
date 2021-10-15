@@ -3,7 +3,7 @@ import React from "react"
 export const Reg = () => {
     return (
         <>
-            <>Регистрация</>
+            <div>Регистрация</div>
                 <forrm class="form-reg">
                     <label htmlFor="email">Email:</label>
                     <input id="email" type="email" name="email" size="28" />

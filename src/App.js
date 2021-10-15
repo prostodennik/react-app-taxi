@@ -7,21 +7,24 @@ import { Reg } from './Reg'
 import './App.css';
 
 const PAGES = {
-  map: <Map/>,
-  profile: <Profile/>,
-  logout: <LogOut/>,
-  login: <LogIn/>,
-  reg: <Reg/>
+  map: Map,
+  profile: Profile,
+  logout: LogOut,
+  login: LogIn,
+  reg: Reg
 }
 
 class App extends React.Component {
-  state = { currentPage: "map" };
+  state = { currentPage: "login" };
 
   navigateTo = (page) => {
     this.setState({ currentPage: page });
   };
 
   render() {
+
+    const Page = PAGES[this.state.currentPage];
+
     return (<>
       <header>
         <nav>
@@ -37,7 +40,7 @@ class App extends React.Component {
               </button>
             </li>
             <li>
-              <button onClick={() => { this.navigateTo("logout"); }}>
+              <button onClick={() => { this.navigateTo("login"); }}>
                 Выйти
               </button>
             </li>
@@ -46,7 +49,7 @@ class App extends React.Component {
       </header>
       <main>
         <section>
-          {PAGES[this.state.currentPage]}
+        <Page navigateTo={this.navigateTo} />
         </section>
       </main>
     </>

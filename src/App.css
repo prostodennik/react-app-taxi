@@ -480,3 +480,9 @@ blockquote footer {
   line-height: var(--line-height);
   padding: 1.5rem 0;
 }
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
