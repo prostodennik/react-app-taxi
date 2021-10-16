@@ -4,6 +4,7 @@ import { LogOut } from './LogOut'
 import { Profile } from './Profile'
 import { LogIn } from './LogIn'
 import { Reg } from './Reg'
+import logo from './logo.png'
 import './App.css';
 
 const PAGES = {
@@ -26,23 +27,20 @@ class App extends React.Component {
     const Page = PAGES[this.state.currentPage];
 
     return (<>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <button onClick={() => { this.navigateTo("map"); }}>
-                Карта
-              </button>
+      <header className="header">
+        <div className="logo">
+          <img className="logo__pic" src={logo} alt={"logo"}/> 
+        </div>
+        <nav className="nav">
+          <ul className="nav__list">
+            <li className="nav__item">
+              <button className="nav__btn" onClick = {() => {this.navigateTo("map")}}>Карта</button>
             </li>
-            <li>
-              <button onClick={() => { this.navigateTo("profile"); }}>
-                Профиль
-              </button>
+            <li className="nav__item">
+            <button className="nav__btn" onClick = {() => {this.navigateTo("profile")}}>Профиль</button>
             </li>
-            <li>
-              <button onClick={() => { this.navigateTo("login"); }}>
-                Выйти
-              </button>
+            <li className="nav__item">
+              <button className="nav__btn" onClick = {() => {this.navigateTo("login")}}>Выйти</button>
             </li>
           </ul>
         </nav>
