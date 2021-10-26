@@ -1,6 +1,8 @@
 import React from "react"
+import { Link } from "react-router-dom";
+import './Reg.css'
 
-export const Reg = (props) => {
+export const Reg = () => {
     return (<>
         <div className="login">
             <form className="form">
@@ -13,7 +15,7 @@ export const Reg = (props) => {
                 <input className="input" id="password" type="password" name="password" placeholder="*************" size="28" />
                 <input className="form__submit" type="submit" value="Зарегистрироваться" />
             </form>
-            <div className="login__new">Уже зарегистрированы? <button onClick={() => { props.navigateTo("login"); }} className="login__new-btn">Войти</button></div>
+            <div className="login__new">Уже зарегистрированы? <Link to="/"  className="login__new-btn">Войти</Link></div>
         </div>
     </>
     )
